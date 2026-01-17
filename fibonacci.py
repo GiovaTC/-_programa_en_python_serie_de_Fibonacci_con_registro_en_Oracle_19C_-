@@ -1,4 +1,4 @@
-import cx_Oracle
+import oracledb
 from datetime import datetime
 
 # ===============================
@@ -25,7 +25,7 @@ def fibonacci(n):
 def registrar_en_oracle(n, serie, suma):
     connection = None
     try:
-        connection = cx_Oracle.connect(
+        connection = oracledb.connect(
             user = DB_USER,
             password = DB_PASSWORD,
             dsn=DB_DSN
@@ -48,7 +48,7 @@ def registrar_en_oracle(n, serie, suma):
         connection.commit()
         print("registro almacenado correctamente en oracle.")
     
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("error en base de datos:", e)
 
     finally:
@@ -59,4 +59,23 @@ def registrar_en_oracle(n, serie, suma):
 # ===============================
 # PROGRAMA PRINCIPAL
 # ===============================   
+def main():
+    n = int(input("ingrese el numero de terminos Fibonacci: "))
 
+    if n <= 0:
+        print("el numero debe ser mayor que cero. ")
+        return
+    
+    serie = fibonacci(n)
+    suma = sum(serie)   
+
+    print("\nSerie Fibonacci generada:")
+    print(serie)
+
+    print("\nSuma total:")
+    print(suma)
+
+    registrar_en_oracle(n, serie, suma)
+
+if __name__ == "__main__":
+    main()
