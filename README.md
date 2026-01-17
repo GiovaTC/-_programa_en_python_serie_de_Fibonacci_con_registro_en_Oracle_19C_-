@@ -3,6 +3,8 @@
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/c993ce19-0896-4a0a-8d58-5a6ab6ce7e12" />  
 
+<img width="2555" height="1079" alt="image" src="https://github.com/user-attachments/assets/a799b8aa-5ce6-44c9-bced-b655c92c2e54" />  
+
 ## 1. Descripción general:
 
 A continuación se presenta una solución completa, profesional y ejecutable para un programa en **Python** que:
